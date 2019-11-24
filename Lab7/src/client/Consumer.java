@@ -14,6 +14,7 @@ public class Consumer extends Thread {
     }
 
     public void run() {
+        Thread.currentThread().setName("Consumer");
         Future<Integer> future;
         for (int i = 0; i < consumedAmount; ++i) {
             future = proxyBuffer.get();
@@ -27,13 +28,14 @@ public class Consumer extends Thread {
             }
 
             try {
-                Integer result = future.get(10, TimeUnit.SECONDS);
+                Integer result = future.get(); //10, TimeUnit.SECONDS);
                 System.out.println("CONSUMED: " + result);
             } catch (InterruptedException | ExecutionException e) {
                 e.printStackTrace();
-            } catch (TimeoutException e) {
-                System.out.println("CONSUMER HASN'T RECEIVED ANSWER FOR 10 SEC");
             }
+//            catch (TimeoutException e) {
+//                System.out.println("CONSUMER HASN'T RECEIVED ANSWER FOR 10 SEC");
+//            }
         }
     }
 }

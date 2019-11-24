@@ -1,20 +1,21 @@
 package server;
 
 public class PutMethodRequest extends MethodRequest {
-    private int el;
+    private int elem;
 
-    public PutMethodRequest(int el) {
-        this.el = el;
+    public PutMethodRequest(int elem) {
+        this.elem = elem;
     }
 
     @Override
     public boolean guard() {
-//todo
-        return true;
+        return !Servant.isBufferFull();
     }
 
     @Override
     public void call() {
-        //todo
+        Servant.put(elem);
+        System.out.println("PUT ELEM " + elem);
+//        return elem;
     }
 }

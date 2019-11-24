@@ -6,18 +6,15 @@ import server.Scheduler;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.Semaphore;
 
 public class ActiveObject {
     static ExecutorService executorService = Executors.newSingleThreadExecutor();
+    static Producer producer;
 
     private static void run(int capacity) {
         Scheduler scheduler = new Scheduler();
         scheduler.start();
-        ProxyBuffer proxyBuffer = new ProxyBuffer(scheduler);
-
-        Semaphore free = new Semaphore(capacity);
-        Semaphore full = new Semaphore(0);
+        ProxyBuffer proxyBuffer = new ProxyBuffer(scheduler, capacity);
 
         Producer p = new Producer(proxyBuffer, 100);
 

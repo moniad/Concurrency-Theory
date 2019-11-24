@@ -1,19 +1,23 @@
 package server;
 
 public class GetMethodRequest extends MethodRequest {
-    private int el; //todo
+    private int elem = -5000;
 
     public GetMethodRequest() {
     }
 
     @Override
     public boolean guard() {
-//todo
-        return true;
+        return !Servant.isBufferEmpty();
     }
 
     @Override
     public void call() {
-    //todo
+        System.out.println("GET ELEM " + getElem());
+        elem = Servant.get();
+    }
+
+    public int getElem() {
+        return elem;
     }
 }

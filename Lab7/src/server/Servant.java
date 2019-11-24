@@ -2,35 +2,28 @@ package server;
 
 import utils.ProxyBuffer;
 
-public class Servant { // pracownik
-    public void put(int el) {
+/*
+ Metoda Servanta jest wywołana gdy odpowiadające jej żądanie metody (Method Request) jest wykonane przez Scheduler.
+ Servant wykonuje się w wątku Schedulera. Servant może dostarczać dodatkowych metod, które mogą posłużyć do
+ implementacji strażników w Method Request
+ */
+class Servant { // pracownik
+    static void put(int el) {
         ProxyBuffer.buffer.add(el);
         System.out.println("PRODUCED " + el);
-
-
-//        System.out.println("Current buffer state: ");
-//        for (int el : buffer) {
-//            System.out.println("EL: " + el);
-//        }
     }
 
-    public int get() {
-        if (ProxyBuffer.buffer.size() == 0) {
-            try {
-                throw new Exception();
-            } catch (Exception e) {
-                System.out.println("Rozmiar bufora zero, nie wolno sięgać :(");
-            }
-        }
+    static int get() {
         Integer returnVal = ProxyBuffer.buffer.get(0);
         ProxyBuffer.buffer.remove(0);
-
-//        if (buffer.size() > 0) {
-//            System.out.println("Current buffer state: ");
-//            for (int el : buffer) {
-//                System.out.println("EL: " + el);
-//            }
-//        }
         return returnVal;
+    }
+
+    static boolean isBufferEmpty() {
+        return ProxyBuffer.buffer.isEmpty();
+    }
+
+    static boolean isBufferFull() {
+        return ProxyBuffer.buffer.size() == ProxyBuffer.capacity;
     }
 }
