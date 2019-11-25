@@ -1,4 +1,4 @@
-package mySolution.server;
+package server;
 
 public class PutMethodRequest extends MethodRequest {
     private int elem;

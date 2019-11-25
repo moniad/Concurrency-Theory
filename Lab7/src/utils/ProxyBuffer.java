@@ -1,8 +1,8 @@
-package mySolution.utils;
+package utils;
 
-import mySolution.server.GetMethodRequest;
-import mySolution.server.PutMethodRequest;
-import mySolution.server.Scheduler;
+import server.GetMethodRequest;
+import server.PutMethodRequest;
+import server.Scheduler;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package mySolution.server;
+package server;
 
 public class Scheduler extends Thread {
     private int tasksToBeRemovedLast;

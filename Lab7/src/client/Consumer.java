@@ -1,7 +1,7 @@
-package mySolution.client;
+package client;
 
-import mySolution.utils.CustomFuture;
-import mySolution.utils.ProxyBuffer;
+import utils.CustomFuture;
+import utils.ProxyBuffer;
 
 public class Consumer extends Thread {
     private ProxyBuffer proxyBuffer;

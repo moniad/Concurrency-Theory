@@ -1,4 +1,4 @@
-package mySolution.utils;
+package utils;
 
 public class CustomFuture {
     private Object object;

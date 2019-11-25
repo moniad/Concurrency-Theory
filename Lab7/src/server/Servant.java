@@ -1,6 +1,6 @@
-package mySolution.server;
+package server;
 
-import mySolution.utils.ProxyBuffer;
+import utils.ProxyBuffer;
 
 class Servant { // pracownik
     static void put(int el) {

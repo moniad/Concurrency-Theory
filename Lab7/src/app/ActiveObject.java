@@ -1,8 +1,9 @@
-package mySolution.utils;
+package app;
 
-import mySolution.client.Consumer;
-import mySolution.client.Producer;
-import mySolution.server.Scheduler;
+import client.Consumer;
+import client.Producer;
+import server.Scheduler;
+import utils.ProxyBuffer;
 
 public class ActiveObject {
 

@@ -1,6 +1,6 @@
-package mySolution.server;
+package server;
 
-import mySolution.utils.CustomFuture;
+import utils.CustomFuture;
 
 public class GetMethodRequest extends MethodRequest {
     private CustomFuture customFuture;

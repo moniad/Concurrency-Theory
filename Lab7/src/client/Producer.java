@@ -1,6 +1,6 @@
-package mySolution.client;
+package client;
 
-import mySolution.utils.ProxyBuffer;
+import utils.ProxyBuffer;
 
 public class Producer extends Thread {
     private ProxyBuffer proxyBuffer;

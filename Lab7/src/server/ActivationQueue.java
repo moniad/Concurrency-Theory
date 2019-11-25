@@ -1,4 +1,4 @@
-package mySolution.server;
+package server;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

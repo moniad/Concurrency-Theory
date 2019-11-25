@@ -1,4 +1,4 @@
-package mySolution.server;
+package server;
 
 public abstract class MethodRequest {
 //        implements Callable<Integer> {
