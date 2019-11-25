@@ -4,12 +4,7 @@ import mySolution.client.Consumer;
 import mySolution.client.Producer;
 import mySolution.server.Scheduler;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
 public class ActiveObject {
-    static ExecutorService executorService = Executors.newSingleThreadExecutor();
-    static Producer producer;
 
     private static void run(int capacity) {
         Scheduler scheduler = new Scheduler();

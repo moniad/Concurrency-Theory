@@ -4,7 +4,7 @@ import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.concurrent.Semaphore;
 
-class ActivationQueue { // kolejka aktywacji
+class ActivationQueue {
     private Deque<MethodRequest> deque;
     private Semaphore mutex;
 
@@ -23,7 +23,6 @@ class ActivationQueue { // kolejka aktywacji
         if (!deque.isEmpty()) {
             return deque.removeFirst();
         }
-//        System.out.println("EMPTY QUEUE - FIRST!!!!");
         return null;
     }
 
@@ -31,7 +30,6 @@ class ActivationQueue { // kolejka aktywacji
         if (!deque.isEmpty()) {
             return deque.removeLast();
         }
-//        System.out.println("EMPTY QUEUE - LAST!!!!");
         return null;
     }
 }

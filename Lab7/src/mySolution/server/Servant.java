@@ -2,11 +2,6 @@ package mySolution.server;
 
 import mySolution.utils.ProxyBuffer;
 
-/*
- Metoda Servanta jest wywołana gdy odpowiadające jej żądanie metody (Method Request) jest wykonane przez Scheduler.
- Servant wykonuje się w wątku Schedulera. Servant może dostarczać dodatkowych metod, które mogą posłużyć do
- implementacji strażników w Method Request
- */
 class Servant { // pracownik
     static void put(int el) {
         ProxyBuffer.buffer.add(el);
