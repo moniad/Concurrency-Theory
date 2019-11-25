@@ -1,4 +1,4 @@
-package server;
+package mySolution.server;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -23,7 +23,7 @@ class ActivationQueue { // kolejka aktywacji
         if (!deque.isEmpty()) {
             return deque.removeFirst();
         }
-        System.out.println("EMPTY QUEUE - FIRST!!!!");
+//        System.out.println("EMPTY QUEUE - FIRST!!!!");
         return null;
     }
 
@@ -31,7 +31,7 @@ class ActivationQueue { // kolejka aktywacji
         if (!deque.isEmpty()) {
             return deque.removeLast();
         }
-        System.out.println("EMPTY QUEUE - LAST!!!!");
+//        System.out.println("EMPTY QUEUE - LAST!!!!");
         return null;
     }
 }

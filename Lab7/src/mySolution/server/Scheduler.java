@@ -1,4 +1,4 @@
-package server;
+package mySolution.server;
 
 public class Scheduler extends Thread {
     private int tasksToBeRemovedLast;
@@ -36,11 +36,10 @@ public class Scheduler extends Thread {
             }
 
             if (methodRequest.guard()) {
-                System.out.println("CALLINGGGGGGG");
                 methodRequest.call();
             } else {
                 // when task cannot be executed, it is put into queue and will be removed as last
-                System.out.println("WHOOOOOOOPS");
+                System.out.println("CANNOT EXECUTE TASK");
                 activationQueue.enqueue(methodRequest);
                 tasksToBeRemovedLast++;
                 hasStatusChanged = false;

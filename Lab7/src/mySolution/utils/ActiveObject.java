@@ -1,8 +1,8 @@
-package utils;
+package mySolution.utils;
 
-import client.Consumer;
-import client.Producer;
-import server.Scheduler;
+import mySolution.client.Consumer;
+import mySolution.client.Producer;
+import mySolution.server.Scheduler;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package server;
+package mySolution.server;
 
 public class PutMethodRequest extends MethodRequest {
     private int elem;
@@ -15,7 +15,7 @@ public class PutMethodRequest extends MethodRequest {
     @Override
     public void call() {
         Servant.put(elem);
-        System.out.println("PUT ELEM " + elem);
+//        System.out.println("PUT ELEM " + elem);
 //        return elem;
     }
 }

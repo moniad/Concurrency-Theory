@@ -1,6 +1,4 @@
-package server;
-
-import java.util.concurrent.Callable;
+package mySolution.server;
 
 public abstract class MethodRequest {
 //        implements Callable<Integer> {

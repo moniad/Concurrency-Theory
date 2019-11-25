@@ -1,8 +1,7 @@
-package client;
+package mySolution.client;
 
-import utils.ProxyBuffer;
-
-import java.util.concurrent.*;
+import mySolution.utils.CustomFuture;
+import mySolution.utils.ProxyBuffer;
 
 public class Consumer extends Thread {
     private ProxyBuffer proxyBuffer;
@@ -15,27 +14,21 @@ public class Consumer extends Thread {
 
     public void run() {
         Thread.currentThread().setName("Consumer");
-        Future<Integer> future;
+        CustomFuture consumed;
         for (int i = 0; i < consumedAmount; ++i) {
-            future = proxyBuffer.get();
+            consumed = proxyBuffer.get();
 
-            while (!future.isDone()) {
+            while (!consumed.isReady()) {
+                System.out.println(Thread.currentThread().getName() + " waits...");
                 try {
                     Thread.sleep(300);
                 } catch (InterruptedException e) {
                     System.out.println("Interrupted");
                 }
             }
-
-            try {
-                Integer result = future.get(); //10, TimeUnit.SECONDS);
-                System.out.println("CONSUMED: " + result);
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
-            }
-//            catch (TimeoutException e) {
-//                System.out.println("CONSUMER HASN'T RECEIVED ANSWER FOR 10 SEC");
-//            }
+            System.out.println("CONSUMED: " + consumed.getObject());
         }
+
+        System.out.println(Thread.currentThread().getName() + " has finished");
     }
 }

@@ -1,6 +1,6 @@
-package server;
+package mySolution.server;
 
-import utils.ProxyBuffer;
+import mySolution.utils.ProxyBuffer;
 
 /*
  Metoda Servanta jest wywołana gdy odpowiadające jej żądanie metody (Method Request) jest wykonane przez Scheduler.
@@ -10,7 +10,6 @@ import utils.ProxyBuffer;
 class Servant { // pracownik
     static void put(int el) {
         ProxyBuffer.buffer.add(el);
-        System.out.println("PRODUCED " + el);
     }
 
     static int get() {
